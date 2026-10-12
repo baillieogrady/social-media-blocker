@@ -1,0 +1,6 @@
+.blocked-hidden-result { display: none !important; }
+a.blocked-social-link, area.blocked-social-link {
+  cursor: not-allowed !important;
+  text-decoration: line-through !important;
+  opacity: .45 !important;
+}

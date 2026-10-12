@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "social-media-blocker",
+  "version": "1.0.0",
+  "description": "Keep social media out of your browser, links and Google results. LinkedIn stays accessible.",
+  "minimum_chrome_version": "101",
+  "permissions": ["declarativeNetRequest"],
+  "declarative_net_request": {"rule_resources": [{"id": "social", "enabled": true, "path": "rules.json"}]},
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["sites.js", "matching.js", "content.js"],
+    "css": ["content.css"],
+    "run_at": "document_start",
+    "all_frames": true,
+    "match_about_blank": true
+  }],
+  "action": {"default_title": "social-media-blocker · Social media stays out", "default_popup": "popup.html"}
+}
